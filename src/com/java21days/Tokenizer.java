@@ -9,11 +9,26 @@ public class Tokenizer {
         String str1 = "A Lannister always pays his debts.";
         String str2 = "Herecutiiscutiacutisentencecutiincutisecretcuticodecuti.";
 
-        tokened1 = new StringTokenizer(str1);
-        int tokenCount1 = tokened1.countTokens();
-        System.out.println("The first phrase has " + tokenCount1 + " tokens");
-        for (int i=1; i<=tokenCount1; i++) {
-            System.out.println("Token " + i + ": " + tokened1.nextToken());
+        showTokens(str1);
+    }
+
+    static void showTokens(String str) {
+        StringTokenizer stk = new StringTokenizer(str);
+        int tokenCount = stk.countTokens();
+
+        System.out.println("The phrase '" + str + "' has " + tokenCount + " tokens:");
+        for (int i=1; i<=tokenCount; i++) {
+            System.out.println("Token " + i + ": " + stk.nextToken());
+        }
+    }
+
+    static void showTokens(String str, String token) {
+        StringTokenizer stk = new StringTokenizer(str, token);
+        int tokenCount = stk.countTokens();
+
+        System.out.println("The phrase '" + str + "' has " + tokenCount + " tokens:");
+        for (int i=1; i<=tokenCount; i++) {
+            System.out.println("Token " + i + ": " + stk.nextToken());
         }
     }
 }
